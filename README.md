@@ -3,35 +3,60 @@
 #### 介绍
 blog前端页面纯使用VUE + VUEX + ElementUI框架，请求使用axios，路由使用vue-router，及其他优秀小插件完成，虽然过程有点艰苦，不过结果还是挺好的。
 
-#### 软件架构
-软件架构说明
+这里仅仅是vue项目
 
 
-#### 安装教程
+*********************************************************
+### 项目下载后，首先安装依赖包
+```
+npm install
+```
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+### 安装成功后，运行即可
+```
+npm run serve // 请不要把 再一直用 dev 命令了
+```
+然后你就可以直接访问 http://localhost:8081 默认使用mockjs加载数据
+3
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+## 功能
+- 首页
+- 标签
+- 留言
+- 友链
+- 关于
 
 
-#### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+## Tips：
+
+本项目默认已启用mockjs 
+如果你想关闭，可以直接修改mock目录下的 index.js 文件
+blog({ mock: false });
+
+```
+如果你想换一个端口，可以直接修改根目录下的 vue.config.js 文件
+
+  devServer: {
+    port: 2364, // 当前 admin 项目的端口号
+    https: false,
+
+而且也要代理下后端的接口地址，如果你使用 proxy 来实现跨域的话（如果用 CORS 跨域，这里就不用配置了）：
+
+    proxy: {
+      // 配置多个代理
+      "/api": {
+        target: "http://localhost:8081",//这里改成你自己的后端api端口地址，记得每次修改，都需要重新build
+
+```
+
+### 如果要部署，先执行bulid
+```
+npm run build
+
+```
+### dist目录就是打包好的文件
+
+
+
